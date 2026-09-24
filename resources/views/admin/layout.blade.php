@@ -125,9 +125,9 @@
                     <nav class="nav flex-column gap-2">
                         <a href="{{ route('admin.filieres.index') }}" class="px-3 py-2 rounded">Filières</a>
                         <a href="#" class="px-3 py-2 rounded">Niveaux</a>
-                        <a href="#" class="px-3 py-2 rounded">Années</a>
+                        <a href="{{ route('admin.annees-academiques.index') }}" class="px-3 py-2 rounded">Années académiques</a>
                         <a href="#" class="px-3 py-2 rounded">Matières</a>
-                        <a href="#" class="px-3 py-2 rounded">Épreuves</a>
+                        <a href="{{ route('admin.epreuves.index') }}" class="px-3 py-2 rounded">Épreuves</a>
                     </nav>
                 </aside>
 

@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\EpreuveController as AdminEpreuveController;
 use App\Http\Controllers\Admin\FiliereController;
+use App\Http\Controllers\AnneeAcademiqueController;
+use App\Http\Controllers\Public\EpreuveCatalogueController;
+use App\Http\Controllers\Public\EpreuveController as PublicEpreuveController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -89,4 +93,12 @@ Route::get('/admin-filieres-preview', function () {
 
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function (): void {
     Route::resource('filieres', FiliereController::class);
+    Route::resource('annees-academiques', AnneeAcademiqueController::class);
+    Route::resource('epreuves', AdminEpreuveController::class);
+});
+
+Route::prefix('epreuves')->name('epreuves.')->group(function (): void {
+    Route::get('/', [EpreuveCatalogueController::class, 'index'])->name('catalog');
+    Route::get('/{epreuve}', [PublicEpreuveController::class, 'show'])->name('show');
+    Route::get('/{epreuve}/telecharger', [PublicEpreuveController::class, 'download'])->name('download');
 });

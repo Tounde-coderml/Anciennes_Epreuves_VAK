@@ -379,7 +379,7 @@
                     <h1>Voulez vous les épreuves  ?<br>Connectez-vous !</h1>
                     <p class="subtitle">Entrez vos identifiants</p>
 
-                    <form method="POST" action="{{ route('login') }}" novalidate>
+                    <form method="POST" action="{{ route('login.submit') }}" novalidate>
                         @csrf
 
                         <div class="field-group">
@@ -387,7 +387,7 @@
                                 <input id="email"
                                     name="email"
                                     type="email"
-                                    value="{{ old('email', 'Entrez vôtre email') }}"
+                                    value="{{ old('email', '') }}"
                                     class="form-control @error('email') is-invalid @enderror"
                                     placeholder="Entrez vôtre email"
                                     autocomplete="email"
@@ -421,7 +421,7 @@
                             @enderror
                         </div>
 
-                        <button type="submit" class="btn-submit">Rapport</button>
+                        <button type="submit" class="btn-submit">Se connecter</button>
                     </form>
 
                     <div class="meta-line">

@@ -46,11 +46,21 @@
                 box-shadow: var(--esgc-shadow);
             }
 
+            .table td,
+            .table th {
+                border-radius: 0;
+            }
+
             .form-control,
             .form-select,
             .btn,
             .badge {
                 border-radius: 999px;
+            }
+
+            textarea.form-control,
+            textarea.form-select {
+                border-radius: 0;
             }
 
             .form-control,

@@ -10,6 +10,13 @@ class AdminAuthRedirectTest extends TestCase
 {
     use RefreshDatabase;
 
+    public function test_root_route_redirects_to_login_page(): void
+    {
+        $response = $this->get('/');
+
+        $response->assertRedirect('/login');
+    }
+
     public function test_admin_user_can_login_and_redirect_to_dashboard(): void
     {
         $admin = User::factory()->create([

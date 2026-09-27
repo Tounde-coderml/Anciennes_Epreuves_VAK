@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Validation\ValidationException;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
 Route::get('/login', function () {
